@@ -119,6 +119,9 @@ const alertFunction = () => {
     console.log("delete clicked")
     buttonElement.parentElement.parentElement.remove();
     taskData.splice(taskData.findIndex(task => task.id === buttonElement.parentElement.parentElement.id), 1);
+    
+     localStorage.setItem("data", JSON.stringify(taskData));
+
     if(taskData.length === 0){
         taskItems.classList.add("hidden");
     }
