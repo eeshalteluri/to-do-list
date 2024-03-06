@@ -18,7 +18,7 @@ const closeInfoBtn = document.getElementById("closeInfoBtn");
 const taskContainer = document.getElementById("taskContainer");
 const taskDialog = document.getElementById("taskDialog");
 
-let taskData = [];
+let taskData = JSON.parse(localStorage.getItem("data")) || [];
 let currentTask = {};
 
 openTaskFormBtn.addEventListener("click", () => {
@@ -59,6 +59,9 @@ const addTask = () => {
             taskData.push(taskObject);
         }else{taskData[dataArrIndex] = taskObject;
         }
+
+        localStorage.setItem("data", JSON.stringify(taskData));
+
         
         taskForm.classList.toggle("hidden");
 
@@ -162,4 +165,8 @@ const closeInfo = (buttonElement) => {
     infoTask.classList.toggle("hidden");
     openTaskFormBtn.disabled = false;
 
+}
+
+if(taskData.length){
+    displayTasks();
 }
