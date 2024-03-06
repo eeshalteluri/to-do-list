@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <div id="taskContainer">
+        <nav id="taskNav">
+            <h1>To Do</h1>
+                <button id="modeBtn"><img src="./Assets/night-mode.png" alt="Torch Icon"></button>
+        </nav>
+        
+        <button id="openTaskFormBtn">+</button>
+
+        <form id="taskForm" class="hidden" onsubmit="return false">
+            <button id="closeTaskFormBtn"><img src="./Assets/reject.png"></button>
+            <label for="taskForm-title" class="task-form-label">Title</label>
+            <input type="text" placeholder="Add new task" id="title-input" autofocus required>
+
+            <label for="taskForm-date" class="task-form-label">Date </label>
+            <input type="date" placeholder="" id="date-input" required>
+
+            <label for="taskForm-date" class="task-form-label">Time </label>
+            <input type="time" placeholder="" id="time-input">
+
+            <label for="taskForm-description" class="task-form-label">Describe your Task </label>
+            <textarea placeholder="" id="description-input" maxlength="200"></textarea>
+
+            <button id="submitTaskFormBtn" >Add Task</button>
+
+        </form> 
+           
+         <div id="taskItems" class="hidden">
+         </div>
+
+            <div id="filterTasks" class="hidden">
+                <button id="allTasks">All</button>
+                <button id="pendingTasks">Pending</button>
+                <button id="completedTasks">Completed</button>
+            </div>
+
+            <div id="infoTask" class="hidden">
+            </div>    
+    </div>        
+    <script src="./script.js"></script>
+</body>
+</html>
